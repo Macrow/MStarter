@@ -1,6 +1,5 @@
 package org.mstudio.mstarter.base;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
@@ -28,11 +27,9 @@ public class BaseEntity implements Serializable {
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp createTime;
 
     @LastModifiedDate
     @Column(nullable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 }

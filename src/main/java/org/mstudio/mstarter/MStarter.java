@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
  */
 @SpringBootApplication
 @EnableJpaAuditing
-public class MStarterApplication {
+public class MStarter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MStarterApplication.class, args);
+		SpringApplication.run(MStarter.class, args);
 	}
 
 }
