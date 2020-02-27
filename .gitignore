@@ -29,6 +29,9 @@ build/
 ### VS Code ###
 .vscode/
 
+### log ###
+/log
+*.log
 
 ### Mac OS temp files ###
 .DS_Store
