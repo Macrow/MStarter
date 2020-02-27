@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<hutool.version>5.1.4</hutool.version>
-		<mariadb.driver.version>2.5.4</mariadb.driver.version>
+		<postgresql.driver.version>42.2.10</postgresql.driver.version>
 	</properties>
 
 	<dependencies>
@@ -59,9 +59,9 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
-			<version>${mariadb.driver.version}</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.driver.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>cn.hutool</groupId>
