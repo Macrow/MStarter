@@ -23,7 +23,7 @@
             <charset>UTF-8</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${logging.file.path}/info.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${logging.file.path}/%d{yyyy-MM-dd}.info.log</fileNamePattern>
             <MaxHistory>90</MaxHistory>
             <totalSizeCap>1GB</totalSizeCap>
         </rollingPolicy>
@@ -39,7 +39,7 @@
             </pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${logging.file.path}/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${logging.file.path}/%d{yyyy-MM-dd}.error.log</fileNamePattern>
             <MaxHistory>90</MaxHistory>
             <totalSizeCap>1GB</totalSizeCap>
         </rollingPolicy>

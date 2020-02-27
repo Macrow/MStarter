@@ -13,6 +13,9 @@ import java.io.Serializable;
 public class Result extends ResponseEntity<Object> {
     private static final String MESSAGE_SUCCESS = "操作成功";
     private static final String MESSAGE_FAILED = "操作失败";
+    private static final String MESSAGE_NO_AUTH = "没有权限";
+    private static final String MESSAGE_FORBIDDEN = "资源不可用";
+    private static final String MESSAGE_NO_FOUND = "资源不存在";
 
     private Result(Object body, HttpStatus status) {
         super(body, status);
@@ -50,12 +53,20 @@ public class Result extends ResponseEntity<Object> {
         return new Result(RawResult.build(HttpStatus.BAD_REQUEST, false, message, null), HttpStatus.BAD_REQUEST);
     }
 
-    public static Result error() {
-        return new Result(RawResult.build(HttpStatus.INTERNAL_SERVER_ERROR, false, MESSAGE_FAILED, null), HttpStatus.INTERNAL_SERVER_ERROR);
+    public static Result noAuth() {
+        return new Result(RawResult.build(HttpStatus.UNAUTHORIZED, false, MESSAGE_NO_AUTH, null), HttpStatus.UNAUTHORIZED);
     }
 
-    public static Result error(String message) {
-        return new Result(RawResult.build(HttpStatus.INTERNAL_SERVER_ERROR, false, message, null), HttpStatus.INTERNAL_SERVER_ERROR);
+    public static Result forbidden() {
+        return new Result(RawResult.build(HttpStatus.FORBIDDEN, false, MESSAGE_FORBIDDEN, null), HttpStatus.FORBIDDEN);
+    }
+
+    public static Result noFound() {
+        return new Result(RawResult.build(HttpStatus.NOT_FOUND, false, MESSAGE_NO_FOUND, null), HttpStatus.NOT_FOUND);
+    }
+
+    public static Result error() {
+        return new Result(RawResult.build(HttpStatus.INTERNAL_SERVER_ERROR, false, MESSAGE_FAILED, null), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @Data

@@ -59,4 +59,9 @@ public class UserController {
         userRepository.updateNameById(1232875288069801254L, String.valueOf(RandomUtil.randomNumber()));
         return Result.success();
     }
+
+    @GetMapping("/ok5")
+    public Result ok5() {
+        throw new IllegalArgumentException("自定义消息");
+    }
 }
